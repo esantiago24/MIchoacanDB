@@ -1,0 +1,30 @@
+<html>
+        <head>
+                <title>MDB Password Recovery</title>
+		<link rel="icon" href="./Images/LF.ico"> <!--Webpage Icon -->
+                <link href="./CSS/Forgetpass.css" rel="stylesheet" type="text/css">
+
+        </head>
+
+        <body>
+                 <div class="forget"> <!--Forgotten Password-->
+                        <form>
+                                <h2>Forgotten Password</h2>
+				<h5>Enter the email of your MDB-user account. We'll send a link to your email to re-establish your password.</h5>
+                                <input type="text" name="username" placeholder="Enter your email" /><br><br>
+                                <a href="#"><input type="button" value="Send link" onclick="myFunction()"/><br><br>
+                                <a href="./Login.html">Log in</a><br><br>
+                                <div id="send">Link sent to your email successfully!</div>
+                                <script>
+                                function myFunction(){
+                                        var x = document.getElementById("send");
+                                        x.className = "show";
+                                        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                                }
+                                </script>
+                        </form>
+                </div>
+
+        </body>
+</html>
+

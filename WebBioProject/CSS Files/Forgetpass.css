@@ -1,0 +1,122 @@
+body {
+        font-family:Arial;
+        color: #ffe6e6;
+        background:url(../Images/Coli.jpg);
+        background-size:100%;
+}
+
+.forget {
+        background: rgba(44,62,80,0.7);
+        padding:40px;
+        width:250px;
+        height:450px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:80px;
+}
+
+form { /*Lines up the text boxes inside the rectangle*/
+        width:240px;
+        margin-top:-40px;
+        text-align:center;
+}
+
+input {
+        width:240px;
+        text-align:center;
+        background:transparent;
+        border:none;
+        border-bottom:1px solid #FFF;
+        font-family:Arial;
+        font-size:16px;
+        font-weight:200px;
+        padding:10px 0;
+        transition:border 0.5s;
+        outline:none;
+        color:#FFF;
+        margin-left:auto;
+}
+
+input[type=button] {
+        border:none;
+        width:190px;
+        background:white;
+        color: #000;
+        font-size:16px;
+        line-height:25px;
+        padding:10px 0;
+        border-radius:15px;
+        cursor:pointer;
+        font-family:sans-serif;
+}       
+
+input[type=button]:hover {
+        color:#FFF;
+        background-color:#000;
+}
+
+h2 {
+        color:#FFF;
+        font-size:36px;
+}
+
+h5 {
+	font-size:20px;
+	text-align:justify;
+	text-justify:inter-word;	
+}
+
+a {
+        color:yellow;
+        text-decoration:blink;
+}
+
+a:hover {
+        color:skyblue;
+}
+
+::placeholder {
+        color:aliceblue;
+        opacity:0.8;
+}
+
+#send {
+        visibility:hidden;
+        min-width:250px;
+        background-color:yellow;
+        color:#000;
+        text-align:center;
+        border-radius:2px;
+        padding:16px;
+        position:fixed;
+        z-index:1;
+        right:36.5%;
+        top:30px;
+        font-size:20px;
+}
+
+#send.show {
+        visibility:visible;
+        -webkit-animation:fadein 0.5s, fadeout 0.5s 2.5s;
+        animation:fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+        from {top:0;opacity:0;}
+        to {top:30px;opacity:1;}
+}
+
+@keyframes fadein {
+        from {top:0;opacity:0;}
+        to {top:30px;opacity:1;}
+}
+
+@-webkit-keyframes fadeout {
+        from {top:30px;opacity:1;}
+        to {top:0;opacity:0;}
+}
+
+@keyframes fadeout {
+        from {top:30px;opacity:1;}
+        to {top:0;opacity:0;}
+}

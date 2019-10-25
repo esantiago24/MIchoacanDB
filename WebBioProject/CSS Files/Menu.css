@@ -1,0 +1,52 @@
+#Menu {
+	height:60px;
+	background-color:#FFF;
+}
+
+ul.EMenu {/*main menu*/
+	background: #FFF;
+	height:60px;
+	margin-right:0;
+	padding:0;
+}
+
+ul.EMenu ul {/* sub-menus */
+	background:#FFF;
+	display:none; 
+	position:absolute;
+	top:100%;
+	width:150px;
+}
+
+ul.EMenu > li {
+	position:relative;
+	display:inline-block;
+	list-style:none;
+	width:150px;
+	height:60px;
+	text-align:center;
+        font-family:Tahoma, Geneva, sans-serif;
+	font-size:18px;
+}
+
+ul.EMenu a{
+	cursor: pointer; 
+	display: block; 
+	color:#787878;	/*Letter color*/ 
+	line-height:15px; 
+	padding:20px; 
+	text-decoration:none;
+}
+
+ul.EMenu li { 
+	list-style:none;
+}
+
+ul.EMenu li:hover { 
+	background: #DCDCDC; /*Highlight selector*/  
+}
+
+ul.EMenu li:hover ul { 
+	display: block;
+	padding:0;
+}

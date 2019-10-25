@@ -1,0 +1,35 @@
+<html>
+	<head>
+                <title>MDB Registration</title>
+		<link rel="icon" href="./Images/LF.ico"> <!--Webpage Icon -->
+                <link href="./CSS/Register.css" rel="stylesheet" type="text/css">
+
+        </head>
+
+        <body>
+                 <div class="register"> <!--Register Form-->
+                        <form>
+                                <h2 style="color: white">Register</h2>
+                                <input type="text" name="username" placeholder="First Name"><br><br>
+				<input type="text" name="username" placeholder="Last Name"><br><br>
+                                <input type="password" name="pass" placeholder="Password"><br><br>
+				<input type="password" name="pass" placeholder="Confirm Password"><br><br>
+				<input type="text" name="email" placeholder="E-Mail address"><br><br>
+                                <a href="#"><input type="button" value="Register" onclick="myFunction()"></a><br><br>
+                        		<div id="msg">Welcome to MDB!</div>
+					<script>
+						function myFunction() {
+							var x = document.getElementById("msg");
+							x.className  = "show";
+							setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+						}
+					</script>
+					<br>Already have an account?<a href="./Login.html">&nbsp;&nbsp;Log in</a>
+					
+			</form>
+                </div>
+
+        </body>
+
+</html>
+

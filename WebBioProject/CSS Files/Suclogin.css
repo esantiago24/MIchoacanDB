@@ -1,0 +1,33 @@
+/*Successful Login*/
+
+body {
+	font-family:Arial;
+	color: #ffe6e6;
+	background:url(../Images/Coli.jpg);
+	background-size:100%;
+}
+
+form { /*Lines up the text in the rectangle*/
+        width: 240px;
+        text-align:center;
+}
+
+a {
+	color:yellow;
+	font-family:Arial;
+}
+
+.suclogin{
+	background:rgba(44,62,80,0.7);
+	padding:40px;
+	height:200px;
+	margin-left:180px;
+	margin:0 auto;
+	margin-top:120px;
+	width:240px;
+}
+
+h2 {
+	margin-top:50px;
+	margin-left:10px;
+}

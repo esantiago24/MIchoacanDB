@@ -1,0 +1,83 @@
+/*Login CSS file*/
+
+body {
+	font-family:Arial;
+	color: #ffe6e6;
+	background:url(../Images/Coli.jpg);
+	background-size:100%;
+}
+
+.signin {
+	background:rgba(44,62,80,0.7);
+	padding:40px;
+	width:280px;
+	margin-right:auto;
+	margin-top:80px;
+	height:400px;
+	margin-left:auto;
+}
+
+form { /*Lines up the text in the rectangle*/
+	width: 275px;
+	text-align:center;
+}
+
+input{
+	width:240px;
+	text-align:center;
+	background:transparent;
+	border:none;
+	border-bottom:1px solid #FFF;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:200px;
+	padding:10px 0;
+	transition:border 0.5s;
+	outline:none;
+	color:#FFF;
+	margin-left:auto;
+}
+
+input[type=button] {
+	border:none;
+	width:190px;
+	background:white;
+	color: #000;
+	font-size:16px;
+	line-height:25px;
+	padding:10px 0;
+	border-radius:15px;
+	cursor:pointer;
+	font-family:sans-serif;
+}	
+
+input[type=button]:hover {
+	color:#FFF;
+	background-color:#000;
+	
+}
+
+h2 {
+	color:white;
+	font-size:38px;
+}
+
+a {
+	color:yellow;
+	text-decoration:blink;
+}
+
+a:hover {
+	color:skyblue;
+}
+
+.Formcontainer {
+	display:flex;
+	flex-direction:row;
+	width:100%;
+}
+
+::placeholder {
+	color:aliceblue;
+	opacity:0.8;
+}
