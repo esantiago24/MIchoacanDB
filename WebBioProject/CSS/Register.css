@@ -3,7 +3,7 @@
 body {
         font-family:Arial;
         color: #ffe6e6;
-        background:url(../Images/Coli.jpg);
+        background:url(../Ima/Coli.jpg);
         background-size:100%;
 }
 
@@ -50,7 +50,7 @@ input[type=button] {
         border-radius:15px;
         cursor:pointer;
         font-family:sans-serif;
-}       
+}
 
 input[type=button]:hover {
         color:#FFF;
@@ -122,4 +122,3 @@ a:hover {
         from {top:30px;opacity:1;}
         to {top:0;opacity:0;}
 }
-
