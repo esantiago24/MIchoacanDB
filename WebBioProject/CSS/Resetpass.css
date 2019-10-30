@@ -33,9 +33,9 @@ img {
         padding:40px;
         width:280px;
         margin-right:auto;
-        margin-top:80px;
         height:400px;
         margin-left:auto;
+	transform:translate(5px,-108px);
 }
 
 form { /*Lines up the text in the rectangle*/

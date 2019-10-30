@@ -28,9 +28,9 @@ img {
         padding:40px;
         width:250px;
         height:450px;
-        margin-left:auto;
-        margin-right:auto;
-        margin-top:80px;
+	margin-left:auto;
+	margin-right:auto;
+	transform:translate(15px,-120px);
 }
 
 form { /*Lines up the text boxes inside the rectangle*/
