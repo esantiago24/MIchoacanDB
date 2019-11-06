@@ -54,18 +54,19 @@
 				</div> <!--End Menu-->
 
 				<div id="SideBar"></div>
-
+				<form method="get" action="Search.php">
 				<div id="MainBody"> <!--MainBody contains the search bar-->
 					<div class="search-box">
-						<input class="search-txt" type="text" name="" placeholder="Type to search">
-						<a class="search-btn" href="#">
+						<input class="search-txt" type="text" name="search" placeholder="Type to search" id="search">
+						<input class="search-btn" name="search_button" type="submit" value="Search">
 						<i class="fas fa-search"></i>
-						</a>
+						</input>
 					</div>
 					<div class="Text_Search">
 						<h1>Gene Search</h1>
 					</div>
 				</div> <!--End MainBody-->
+				</form>
 			</div> <!--End Content Wrap-->
 		</div> <!--End Container-->
 	</body>
