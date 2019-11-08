@@ -35,7 +35,7 @@ body{
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	transition:0.4s;
+	transition:1.2s;
 	border:none;
 }
 
@@ -47,7 +47,7 @@ body{
 	padding:0;
 	color:white;
 	font-size:20px;
-	transition:0.4s;
+	transition:1.2s;
 	line-height:50px;
 	width:0px;
 }

@@ -45,13 +45,13 @@ img {
 #SideBar {
 	width:150px;
 	height:400px;
-	background-color:#008080;
+	background-color:#FFF;
 	float:left;
 }
 
 #MainBody {
 	width:1120px;
 	height:400px;
-	background-color:#87CEEB;
+	background-color:#FFF;
 	float:right;
 }

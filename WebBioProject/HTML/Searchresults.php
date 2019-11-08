@@ -6,7 +6,7 @@
 		<title> E. Coli Gene Database </title>
 		<link rel="icon" href="../Ima/LF.ico"> <!--Webpage Icon -->
 		<link href="../CSS/Mainbodyres.css" rel="stylesheet" type="text/css" /> <!--Link to css file-->
-		<link href="../CSS/Menu.css" rel="stylesheet" type="text/css" />
+		<link href="../CSS/MenuRes.css" rel="stylesheet" type="text/css" />
 		<link href="../CSS/Searchresultsbar.css" rel="stylesheet" type="text/css" />
 		<script src="https://kit.fontawesome.com/43eb676244.js" crossorigin="anonymous"></script>
 
@@ -37,7 +37,7 @@
 				<!--The following lines contain the Menu set up-->
 				<div id="Menu">
 					<ul class="EMenu">
-						<li><a href="#" class="has-sub">Home</a></li>
+						<li><a href="./InterfazWeb.html" class="has-sub">Home</a></li>
 						<li><a href="#" class="has-sub">Download</a>
 							<ul>
 							<li><a href="#">Dataset</a></li>
