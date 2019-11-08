@@ -1,10 +1,55 @@
 <html>
 	<head>
-                <title>MDB Registration</title>
-		<link rel="icon" href="../Ima/LF.ico"> <!--Webpage Icon -->
-                <link href="../CSS/Register.css" rel="stylesheet" type="text/css">
+              <title>MDB Registration</title>
+							<link rel="icon" href="../Ima/LF.ico"> <!--Webpage Icon -->
+              <link href="../CSS/Register2.css" rel="stylesheet" type="text/css">
+	<script language="JavaScript">
 
-        </head>
+								function validate_name(nombre){
+									var cadena=nombre.value.trim()
+											if(cadena == null || cadena.length <=1 || cadena.match(/([^A-Z])/im)){
+											nombre.style.borderBottomColor="red";
+											return 0;
+										} else{return 1;}
+								 }
+
+								function validate_mail(correo){
+											if(correo.value == null || correo.value.length == 0 || !correo.value.match(/(^\w+@\w+((\.\w+){1,2})$)/im)){
+											correo.style.borderBottomColor="red";
+											return 0;
+											} else{return 1;}
+								}
+
+								function myFunction(){
+										var x = document.getElementById("msg");
+										x.className  = "show";
+										setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+								}
+
+								 function clean(limpiar){
+					         limpiar.style.borderBottomColor = "white";
+					       }
+
+
+								 function validate_form(){
+									 	var flag=1;
+										if(!validate_name(document.getElementById("First_Name"))){
+											flag=0;
+										}
+										if(!validate_name(document.getElementById("Last_Name"))){
+											flag=0;
+										}
+										if(!validate_mail(document.getElementById("Mail"))){
+											flag=0;
+										}
+										if(!flag){
+											return false;
+										}
+								 	}
+
+
+				      </script>
+  </head>
 
         <body>
                 <div id="Container">
@@ -17,25 +62,17 @@
                 </div>
 
                 <div class="register"> <!--Register Form-->
-                        <form>
+                          <form id="BUSQUEDA" name="Search_bar" method="get" onsubmit="return validate_form();" action="Downloads.html" >
                                 <h2 style="color: white">Register</h2>
-                                <input type="text" name="username" placeholder="First Name"><br><br>
-				<input type="text" name="username" placeholder="Last Name"><br><br>
-                                <input type="password" name="pass" placeholder="Password"><br><br>
-				<input type="password" name="pass" placeholder="Confirm Password"><br><br>
-				<input type="text" name="email" placeholder="E-Mail address"><br><br>
-                                <a href="#"><input type="button" value="Register" onclick="myFunction()"></a><br><br>
+                                <input type="text" id=First_Name name="username" placeholder="First Name" autocomplete="off" onblur="return validate_name(this);" onclick="clean(this)" ><br><br>
+																<input type="text" id=Last_Name name="username" placeholder="Last Name" autocomplete="off" onblur="return validate_name(this);" onclick="clean(this)" ><br><br>
+																<input type="text" id=Mail name="email" placeholder="E-Mail address" autocomplete="off" onblur="return validate_mail(this);" onclick="clean(this)"><br><br>
+                                <input type="submit" value="Register" > <br><br>
                         		<div id="msg">Welcome to MDB!</div>
-					<script>
-						function myFunction() {
-							var x = document.getElementById("msg");
-							x.className  = "show";
-							setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-						}
-					</script>
-					<br>Already have an account?<a href="./Login.html">&nbsp;&nbsp;Log in</a>
 
-			</form>
+														<br>Already registered?<a href="./Login.html">&nbsp;&nbsp;Log in</a>
+
+													</form>
                 </div>
 
         </body>

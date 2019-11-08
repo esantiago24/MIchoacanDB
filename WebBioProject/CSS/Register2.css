@@ -42,7 +42,7 @@ form { /*Lines up the text boxes inside the rectangle*/
 	text-align:center;
 }
 
-input {
+input[type=text] {
  	width:240px;
         text-align:center;
         background:transparent;
@@ -58,7 +58,7 @@ input {
         margin-left:auto;
 }
 
-input[type=button] {
+input[type=submit]{
         border:none;
         width:190px;
         background:white;
@@ -71,7 +71,7 @@ input[type=button] {
         font-family:sans-serif;
 }
 
-input[type=button]:hover {
+input[type=submit]:hover {
         color:#FFF;
         background-color:#000;
 }
