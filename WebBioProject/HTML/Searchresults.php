@@ -28,10 +28,9 @@
 					<input class="search-txt" type="text" name="search" placeholder="Type to search">
 
 					<div class="Checkboxes"> <!--Search Parameters-->
-						<h3>Select below which information to display</h3>
-						<input type="checkbox" name="gene" id="gene" checked="checked"> Gene information
-						<input type="checkbox" name="promoter" id="promoter" checked="checked"> Promoter information
-						<input type="checkbox" name="tu" id="tu" checked="checked"> Transcriptional Unit information
+						<input type="checkbox" name="gene" id="gene" checked="checked"> Gene
+						<input type="checkbox" name="promoter" id="promoter" checked="checked"> Promoter
+						<input type="checkbox" name="tu" id="tu" checked="checked"> Transcriptional Unit
 					</div>
 
 					<button type="submit" name="submit" class="search-btn">
