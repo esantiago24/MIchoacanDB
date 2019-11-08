@@ -1,0 +1,57 @@
+/* Main Page Results design */
+
+#Container {
+	width: 1270px;
+	height:auto;
+	margin-left:0;
+	margin-right:0;
+}
+
+#Header {
+        height:180px;
+        background-color:#FFF;
+
+}
+
+img {
+	max-width:100%;
+	max-height:95%;
+	margin-left:15px;
+	margin-top:5px;
+}
+
+.Text h1{
+	font-family:Arial;
+	color:#004b4b;
+	margin-left:200px;
+	transform: translate(15px,-125px);
+}
+
+.Text_Search h1{
+	font-family:Arial;
+        color:#004b4b;
+        margin-left:185px;
+        transform: translate(15px,60px);
+	font-size:58px;
+	color:white;
+}
+
+
+#Menu {
+	height:60px;
+	background-color:#666;
+}
+
+#SideBar {
+	width:150px;
+	height:400px;
+	background-color:#008080;
+	float:left;
+}
+
+#MainBody {
+	width:1120px;
+	height:400px;
+	background-color:#87CEEB;
+	float:right;
+}
