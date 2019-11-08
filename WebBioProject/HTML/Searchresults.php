@@ -62,9 +62,9 @@
 					<div class="search-box">
 						<input class="search-txt" type="text" name="search" placeholder="Type to search">
 						<div class="Checkboxes"> <!--Search Parameters-->
-							<input type="checkbox" name="gene" id="gene" checked="checked"> Gene </br>
-							<br><input type="checkbox" name="promoter" id="promoter" checked="checked"> Promoter</br>
-							<br><input type="checkbox" name="tu" id="tu" checked="checked"> Transcriptional Unit</br>
+							<input type="checkbox" name="gene" id="gene" checked="checked"> Gene
+							<input type="checkbox" name="promoter" id="promoter" checked="checked"> Promoter
+							<input type="checkbox" name="tu" id="tu" checked="checked"> Transcriptional Unit
 						</div>
 						<button type="submit" name="submit" class="search-btn">
 						<i class="fas fa-search"></i>
