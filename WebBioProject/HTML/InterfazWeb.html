@@ -54,19 +54,32 @@
 				</div> <!--End Menu-->
 
 				<div id="SideBar"></div>
-				<form method="get" action="Search.php">
+				
 				<div id="MainBody"> <!--MainBody contains the search bar-->
+				
+					<form id="form1" name="form1" method="get" action="Searchresults.php">
+
 					<div class="search-box">
-						<input class="search-txt" type="text" name="search" placeholder="Type to search" id="search">
-						<input class="search-btn" name="search_button" type="submit" value="Search">
+						<input class="search-txt" type="text" name="search" placeholder="Type to search">
+						<div class="Checkboxes"> <!--Search Parameters-->
+							<h3> Select below which information to display </h3>
+							<input type="checkbox" name="gene" id="gene" checked="checked"> Gene information </br>
+							<br><input type="checkbox" name="promoter" id="promoter" checked="checked"> Promoter information</br>
+							<br><input type="checkbox" name="tu" id="tu" checked="checked"> Transcriptional Unit information</br>
+						</div>
+						<button type="submit" name="submit" class="search-btn">
 						<i class="fas fa-search"></i>
-						</input>
+						</button>
 					</div>
+				
 					<div class="Text_Search">
 						<h1>Gene Search</h1>
 					</div>
+					
+					</form><!--End Form-->
+
 				</div> <!--End MainBody-->
-				</form>
+			
 			</div> <!--End Content Wrap-->
 		</div> <!--End Container-->
 	</body>

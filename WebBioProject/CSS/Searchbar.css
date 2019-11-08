@@ -36,6 +36,7 @@ body{
 	justify-content:center;
 	align-items:center;
 	transition:0.4s;
+	border:none;
 }
 
 .search-txt{
@@ -49,4 +50,22 @@ body{
 	transition:0.4s;
 	line-height:50px;
 	width:0px;
+}
+
+.Checkboxes{
+	position:absolute;	
+	transform:translate(400px,-120px);
+	font-family:Arial;
+	color:#FFF;
+	justify-content:right;
+	align-items:right;
+	background:rgba(0,0,0,0.7);
+        padding:30px;
+        width:260px;
+        height:215px;
+	border-radius:100px;
+}
+
+.Checkboxes h3{
+	font-size:20px;
 }
