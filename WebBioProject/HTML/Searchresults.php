@@ -26,7 +26,9 @@
 		<div id="Container">
 			<div id="Content-Wrap">
 				<div id="Header">
+					<a href="./InterfazWeb.html">
 					<img src="../Ima/LogHeader.png" alt="" />
+					</a>
 					<div class="Text">
 						<h1>E. Coli Gene Database</h1>
 					</div>
