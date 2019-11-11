@@ -25,15 +25,14 @@ img {
         margin-top:5px;
 }
 
-
 .register {
 	background: rgba(44,62,80,0.7);
 	padding:40px;
 	width:250px;
-	height:450px;
+	height:540px;
 	margin-left:auto;
 	margin-right:auto;
-	transform:translate(0,-22.5%);
+	transform:translate(0px,-160px);
 }
 
 form { /*Lines up the text boxes inside the rectangle*/
@@ -43,7 +42,6 @@ form { /*Lines up the text boxes inside the rectangle*/
 }
 
 input[type=text] {
- 	width:240px;
         text-align:center;
         background:transparent;
         border:none;
@@ -106,12 +104,13 @@ a:hover {
 	min-width:250px;
 	background-color:yellow;
 	color:#000;
-	text-align:center;
+	text-align: justify;
+ 	text-justify: inter-word;
 	border-radius:2px;
 	padding:16px;
 	position:fixed;
 	z-index:1;
-	right:39%;
+	right:-30%;
 	top:30px;
 	font-size:20px;
 }
