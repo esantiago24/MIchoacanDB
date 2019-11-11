@@ -5,17 +5,24 @@
               <link href="../CSS/Register2.css" rel="stylesheet" type="text/css">
 	<script language="JavaScript">
 
+								function pop() {
+									var popup = document.getElementById("myPopup");
+									popup.classList.toggle("show");
+								}
+
+
 								function validate_name(nombre){
-									var cadena=nombre.value.trim()
+									var cadena=nombre.value.trim();
 											if(cadena == null || cadena.length <=1 || cadena.match(/([^A-Z])/im)){
 											nombre.style.borderBottomColor="red";
 											return 0;
 										} else{return 1;}
 								 }
 
-								function validate_mail(correo){
-											if(correo.value == null || correo.value.length == 0 || !correo.value.match(/(^\w+@\w+((\.\w+){1,2})$)/im)){
-											correo.style.borderBottomColor="red";
+								function validate_mail(input){
+									var correo=input.value.trim();
+											if(correo == null || correo.length == 0 || !correo.match(/(^\w+@\w+((\.\w+){1,2})$)/im)){
+											input.style.borderBottomColor="red";
 											return 0;
 											} else{return 1;}
 								}
@@ -43,6 +50,7 @@
 											flag=0;
 										}
 										if(!flag){
+											myFunction();
 											return false;
 										}
 								 	}
@@ -68,7 +76,7 @@
 																<input type="text" id=Last_Name name="username" placeholder="Last Name" autocomplete="off" onblur="return validate_name(this);" onclick="clean(this)" ><br><br>
 																<input type="text" id=Mail name="email" placeholder="E-Mail address" autocomplete="off" onblur="return validate_mail(this);" onclick="clean(this)"><br><br>
                                 <input type="submit" value="Register" > <br><br>
-                        		<div id="msg">Welcome to MDB!</div>
+                        		<div id="msg">Please make sure to check your input. No special characters or empty fields are allowed!</div>
 
 														<br>Already registered?<a href="./Login.html">&nbsp;&nbsp;Log in</a>
 
