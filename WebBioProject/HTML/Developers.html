@@ -1,5 +1,4 @@
-<html>
-	<head>
+<head>
 		<meta charset="utf-8">
 		<link rel="icon" href="../Ima/LF.ico"> <!--Webpage Icon -->
 		<link href="../CSS/Mainbodyres.css" rel="stylesheet" type="text/css" /> <!--Link to css file-->
@@ -15,18 +14,9 @@
 			margin-bottom: 0px;
 		}
 		</style>
-		<title>
-		<?php
-		error_reporting(E_ALL);
- 		ini_set('display_errors', '1');
-		$gene=escapeshellcmd($_GET["search"]);
-		echo $gene;
-		$mysqli = new mysqli("132.248.248.120:3306", "regulonuser", "ReguL1igh22#", "regulondb");
-		?>
-		</title>
-	</head>
-	<body>
-
+		<title>E. Coli Gene Databse </title>
+</head>
+<body>
 		<div id="Container">
 			<div id="Content-Wrap">
 				<div id="Header">
@@ -53,7 +43,7 @@
 							<li><a href="./Register.html">Register</a></li>
 							</ul>
 						</li>
-						<li><a href="#">About us</a></li>
+						<li><a href="./Developers.html">About us</a></li>
 						<li><a href="#">Contact</a></li>
 					</ul>
 				</div> <!--End Menu-->
@@ -76,60 +66,12 @@
 				</div> <!--End MainBody-->
 			</div> <!--End Content Wrap-->
 		</div> <!--End Container-->
+<h1> About us </h1>
+Given the increasing amount of databases in genomics and other areas of knowledge, learning how to develope and manage them could be useful to obtain and add new information for future research. Having this idea in mind, E. Coli Gene Database is developed under the leadership of MichoacanDBs teamwork. E. Coli Gene Database will be our first (maybe of many...) database created, and will be useful as a way to connects us to the world of databases.
+<br><br>
+MichoacanDBs is a teamwork composed of undergraduate students in Genomic Sciences at ENES Juriquilla: Arturo García, Erick Santiago ("Sanjer") and Isaac Garnica, all of them were coming from the wonderful state of Michoacan, México and were united thanks to the Databases class taught by Jair García and Ana Betty Altamirano. 
+<br><br>
+Please contact us for more information or if you're interested in developing a web project (or in conducting a project in a genomics related area).
+<br><br>
 
-		<?php
-		if ($mysqli->connect_errno) {
-		    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-		}else{
-			$quer="SELECT gene_name,gene_posleft,gene_posright,gene_strand,gene_note FROM GENE WHERE gene_name='".$gene."'";
-			$res = $mysqli->query($quer);
-
-			/*Más lento
-			$quer="SELECT GENE.gene_name,GENE.gene_posleft,GENE.gene_posright,GENE.gene_strand,GENE.gene_note FROM GENE JOIN OBJECT_SYNONYM on GENE.gene_id=OBJECT_SYNONYM.object_id WHERE OBJECT_SYNONYM.object_synonym_name='".$gene."' or GENE.gene_name='".$gene."'";
-			$res = $mysqli->query($quer);
-*/
-
-		}
-		$fila=$res->fetch_assoc();
-		if(is_null($fila)){
-			$quer="SELECT GENE.gene_name,GENE.gene_posleft,GENE.gene_posright,GENE.gene_strand,GENE.gene_note FROM GENE JOIN OBJECT_SYNONYM on GENE.gene_id=OBJECT_SYNONYM.object_id WHERE OBJECT_SYNONYM.object_synonym_name='".$gene."' or GENE.gene_name='".$gene."'";
-			$res = $mysqli->query($quer);
-			$fila=$res->fetch_assoc();
-		}
-		if(is_null($fila)){
-			echo "Error, no se ha encontrado el elemento a buscar";		
-		}else{
-			echo '<table border="1" cellpadding="10" cellspacing="0">';
-			echo '<tr>'; 
-			echo '<th colspan="2">Gene</th>';
-			echo '</tr>';
-			$campos=array("gene_name","gene_posleft","gene_posright","gene_strand","gene_note");
-			foreach($campos as $element){
-				echo "<tr>";
-				if($element=="gene_name"){
-					echo "<td>Name</td>";
-				}
-				if($element=="gene_posleft"){
-					echo "<td>Left Position</td>";
-				}
-				if($element=="gene_posright"){
-					echo "<td>Right Position</td>";
-				}
-				if($element=="gene_strand"){
-					echo "<td>Strand</td>";
-				}
-				if($element=="gene_note"){
-					echo "<td>Note</td>";
-				}
-				echo "<td>".$fila[$element]."</td>";
-				echo "<tr>";
-			}
-			echo "</table>";
-		}
-		?>
-		<?php	
-    		$res->close();
-		$mysqli->close();
-		?>
-	</body>
-</html>
+</body>
