@@ -8,6 +8,7 @@ ul.EMenu {/*main menu*/
 	height:60px;
 	margin-right:0px;
 	padding:0;
+	z-index:3;
 }
 
 ul.EMenu ul {/* sub-menus */
@@ -16,6 +17,7 @@ ul.EMenu ul {/* sub-menus */
 	position:absolute;
 	top:100%;
 	width:150px;
+        z-index:3;
 }
 
 ul.EMenu > li {
@@ -27,6 +29,7 @@ ul.EMenu > li {
 	text-align:center;
         font-family:Tahoma, Geneva, sans-serif;
 	font-size:18px;
+	z-index:3;
 }
 
 ul.EMenu a{
@@ -36,18 +39,23 @@ ul.EMenu a{
 	line-height:15px; 
 	padding:20px; 
 	text-decoration:none;
+	z-index:3;
 }
 
 ul.EMenu li { 
 	list-style:none;
+	z-index:3;
 }
 
 ul.EMenu li:hover { 
 	background: #DCDCDC; /*Highlight selector*/  
+        z-index:3;
 }
 
 ul.EMenu li:hover ul { 
 	display: block;
 	padding:0;
+	z-index:3;
+
 }
 

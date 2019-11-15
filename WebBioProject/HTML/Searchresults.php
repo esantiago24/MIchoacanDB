@@ -41,20 +41,9 @@
 				<div id="Menu">
 					<ul class="EMenu">
 						<li><a href="./InterfazWeb.html" class="has-sub">Home</a></li>
-						<li><a href="#" class="has-sub">Download</a>
-							<ul>
-							<li><a href="#">Dataset</a></li>
-							<li><a href="#">Dump</a></li>
-							</ul>
-						</li>
-						<li><a href="#" class="has-sub">Users</a>
-							<ul>
-							<li><a href="./Login.html">Login</a></li>
-							<li><a href="./Register.html">Register</a></li>
-							</ul>
-						</li>
-						<li><a href="#">About us</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="Login.html" class="has-sub">Download</a></li>
+						<li><a href="Developers.html">About us</a></li>
+						<li><a href="Contact_us.html">Contact</a></li>
 					</ul>
 				</div> <!--End Menu-->
 
