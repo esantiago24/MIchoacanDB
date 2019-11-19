@@ -78,6 +78,14 @@ img {
 	line-height:1.6;
 }
 
+.blue-rectangle p2{
+        font-family:Arial;
+        font-size:18px;
+        color:#000;
+        text-align:justify;
+        line-height:1.6;
+}
+
 .blue-rectangle a{
 	font-family:Arial;
         color:#000;

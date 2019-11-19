@@ -16,16 +16,14 @@
 		}
 		</style>
 		<title>
-			MDB Search results
-		</title>
-
 		<?php
-                error_reporting(E_ALL);
-                ini_set('display_errors', '1');
-                $gene=escapeshellcmd($_GET["search"]);
-                $mysqli = new mysqli("132.248.248.120:3306", "regulonuser", "ReguL1igh22#", "regulondb");
-                ?>
-
+		error_reporting(E_ALL);
+ 		ini_set('display_errors', '1');
+		$gene=escapeshellcmd($_GET["search"]);
+		echo $gene;
+		$mysqli = new mysqli("132.248.248.120:3306", "regulonuser", "ReguL1igh22#", "regulondb");
+		?>
+		</title>
 	</head>
 	<body>
 
@@ -60,8 +58,8 @@
 						<input class="search-txt" type="text" name="search" placeholder="Type to search">
 						<div class="Checkboxes"> <!--Search Parameters-->
 							<input type="checkbox" name="gene" id="gene" checked="checked"> Gene
-							<input type="checkbox" name="promoter" id="promoter" checked="checked"> Promoter
-							<input type="checkbox" name="tu" id="tu" checked="checked"> Transcriptional Unit
+							<input type="checkbox" name="promoter" id="promoter" checked="checked"> Product
+							<input type="checkbox" name="tu" id="tu" checked="checked"> Operon
 						</div>
 						<button type="submit" name="submit" class="search-btn">
 						<i class="fas fa-search"></i>

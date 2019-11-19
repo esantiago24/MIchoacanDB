@@ -14,16 +14,16 @@ body{
 	padding:10px;
 }
 
-
 .search-box:hover > .search-txt{
-	width:250px;
-	padding:0 16px;
+        width:250px;
+        padding:0 16px;
 }
 
 .search-box:hover > .search-btn{
         background:#080808;
-	color:white;
+        color:white;
 }
+
 
 .search-btn{
 	color:#87CEEB;
@@ -35,7 +35,6 @@ body{
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	transition:1.2s;
 	border:none;
 }
 
@@ -62,6 +61,7 @@ body{
 	background:rgba(0,0,0,0.7);
         padding:30px;
         width:260px;
+	transition:1.2s;
         height:215px;
 	border-radius:100px;
 }
