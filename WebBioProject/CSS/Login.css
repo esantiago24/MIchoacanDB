@@ -25,14 +25,12 @@ img {
         margin-top:5px;
 }
 
-
-
 .signin {
 	background:rgba(44,62,80,0.7);
 	padding:40px;
-	width:280px;
-	height:400px;
-	transform:translate(128%,-22.5%);
+	width:240px;
+	height:320px;
+	transform:translate(145%,-22.5%);
 }
 
 form { /*Lines up the text in the rectangle*/
@@ -48,7 +46,6 @@ input{
 	border-bottom:1px solid #FFF;
 	font-family:Arial;
 	font-size:16px;
-	font-weight:200px;
 	padding:10px 0;
 	transition:border 0.5s;
 	outline:none;
@@ -66,7 +63,7 @@ input[type=button] {
 	padding:10px 0;
 	border-radius:15px;
 	cursor:pointer;
-	font-family:sans-serif;
+	font-family:Arial;
 }
 
 input[type=button]:hover {

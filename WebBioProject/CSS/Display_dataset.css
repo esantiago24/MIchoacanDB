@@ -38,20 +38,20 @@ iframe {
 }
 
 .download-dump{
-        color:#87CEEB;
-        width:75px;
-        height:75px;
+        color:#000080;
+        width:200px;
+        height:95px;
         border-radius:20%;
         justify-content:center;
         align-items:center;
-	background:#404040;
+	background:#000080;
         border:none;
-	transform:translate(750px,-190px);
+	transform:translate(100px,10px);
 	z-index:2;
 }
 
 .download-dump:hover{
-			background: #8f4535;
+	background: #8f4535;
 }
 
 .download-TSV:hover {
@@ -59,8 +59,10 @@ iframe {
 }
 
 a {
-        color:yellow;
+        color:#FFF;
         text-decoration:blink;
+	font-size:18px;
+	text-align:center;
 }
 
 .Title h1{

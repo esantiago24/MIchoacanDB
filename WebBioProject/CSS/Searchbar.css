@@ -53,8 +53,9 @@ body{
 
 .Checkboxes{
 	position:absolute;
-	transform:translate(400px,-120px);
+	transform:translate(400px,-100px);
 	font-family:Arial;
+	font-size:20px;
 	color:#FFF;
 	justify-content:right;
 	align-items:right;
@@ -62,7 +63,7 @@ body{
         padding:30px;
         width:260px;
 	transition:1.2s;
-        height:215px;
+        height:150px;
 	border-radius:100px;
 }
 
@@ -80,9 +81,10 @@ body{
 	padding:16px;
 	position:fixed;
 	z-index:1;
-	right:-30%;
+	right:5%;
 	top:30px;
 	font-size:20px;
+	font-family:Arial;
 }
 
 #msg.show {
