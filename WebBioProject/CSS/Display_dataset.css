@@ -20,8 +20,8 @@ iframe {
 
 
 
-.download-txt:hover { 
-        background:rgba(0, 98, 102, 0.7); /*Highlight selector*/  
+.download-txt:hover {
+        background:rgba(0, 98, 102, 0.7); /*Highlight selector*/
 }
 
 .download-TSV{
@@ -37,8 +37,25 @@ iframe {
 	z-index:2;
 }
 
-.download-TSV:hover { 
-        background:#8f4535; /*Highlight selector*/  
+.download-dump{
+        color:#87CEEB;
+        width:75px;
+        height:75px;
+        border-radius:20%;
+        justify-content:center;
+        align-items:center;
+	background:#404040;
+        border:none;
+	transform:translate(750px,-190px);
+	z-index:2;
+}
+
+.download-dump:hover{
+			background: #8f4535;
+}
+
+.download-TSV:hover {
+        background:#8f4535; /*Highlight selector*/
 }
 
 a {
