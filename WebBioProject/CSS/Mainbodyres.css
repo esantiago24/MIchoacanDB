@@ -106,3 +106,9 @@ img {
 	transform:translate(520px, 60px);
         
 }
+
+a {
+        color:green;
+        text-decoration:blink;
+
+}

@@ -5,7 +5,7 @@
   <body>
 <?php
 error_reporting(E_ALL);
-$mysqli = new mysqli("localhost:3306", "esantiago", "M1n0mbr3","Erick");
+$mysqli = new mysqli("localhost:3306", "root", "genoma123","ecolidb");
       if ($mysqli->connect_errno) {
           header("Location: ./InterfazWeb.html");
      }

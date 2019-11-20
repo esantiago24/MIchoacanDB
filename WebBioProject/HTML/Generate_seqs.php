@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="icon" href="../Ima/LF.ico"> <!--Webpage Icon -->
-		<link href="../CSS/Mainbodyres.css" rel="stylesheet" type="text/css" /> <!--Link to css file-->
+		<link href="../CSS/Mainbodyseqs.css" rel="stylesheet" type="text/css" /> <!--Link to css file-->
 		<link href="../CSS/MenuRes.css" rel="stylesheet" type="text/css" />
 		<link href="../CSS/Searchresultsbar.css" rel="stylesheet" type="text/css" />
 		<script src="https://kit.fontawesome.com/43eb676244.js" crossorigin="anonymous"></script>
@@ -19,7 +19,6 @@
 		<?php
 		error_reporting(E_ALL);
  		ini_set('display_errors', '1');
-		$name=escapeshellcmd($_GET["search"]);
 		echo "E. Coli Gene Database";
 		$mysqli = new mysqli("132.248.248.120:3306", "regulonuser", "ReguL1igh22#", "regulondb");
 		?>
@@ -51,8 +50,8 @@
 					</ul>
 				</div> <!--End Menu-->
 
-			<div id="SideBar"></div>
 				<div id="MainBody"> <!--MainBody contains the search bar-->
+					<div class="blue-rectangle"></div>
 					<form id="form1" name="form1" method="get" action="Searchresults.php">
 					<div class="search-box">
 						<input class="search-txt" type="text" name="search" placeholder="Type to search">
