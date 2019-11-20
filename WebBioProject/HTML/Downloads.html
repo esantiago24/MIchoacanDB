@@ -18,13 +18,6 @@
 
 		<title>MDB downloads page </title>
 
-		<?php
-                error_reporting(E_ALL);
-                ini_set('display_errors', '1');
-                $gene=escapeshellcmd($_GET["search"]);
-                $mysqli = new mysqli("132.248.248.120:3306", "regulonuser", "ReguL1igh22#", "regulondb");
-                ?>
-
 	</head>
 	<body>
 
@@ -59,8 +52,8 @@
 						<input class="search-txt" type="text" name="search" placeholder="Type to search">
 						<div class="Checkboxes"> <!--Search Parameters-->
 							<input type="checkbox" name="gene" id="gene" checked="checked"> Gene
-							<input type="checkbox" name="promoter" id="promoter" checked="checked"> Promoter
-							<input type="checkbox" name="tu" id="tu" checked="checked"> Transcriptional Unit
+							<input type="checkbox" name="promoter" id="promoter" checked="checked"> Product
+							<input type="checkbox" name="tu" id="tu" checked="checked"> Operon
 						</div>
 						<button type="submit" name="submit" class="search-btn">
 						<i class="fas fa-search"></i>
@@ -71,59 +64,5 @@
 			</div> <!--End Content Wrap-->
 		</div> <!--End Container-->
 
-		<?php
-		if ($mysqli->connect_errno) {
-		    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-		}else{
-			$quer="SELECT gene_name,gene_posleft,gene_posright,gene_strand,gene_note FROM GENE WHERE gene_name='".$gene."'";
-			$res = $mysqli->query($quer);
-
-			/*Más lento
-			$quer="SELECT GENE.gene_name,GENE.gene_posleft,GENE.gene_posright,GENE.gene_strand,GENE.gene_note FROM GENE JOIN OBJECT_SYNONYM on GENE.gene_id=OBJECT_SYNONYM.object_id WHERE OBJECT_SYNONYM.object_synonym_name='".$gene."' or GENE.gene_name='".$gene."'";
-			$res = $mysqli->query($quer);
-*/
-
-		}
-		$fila=$res->fetch_assoc();
-		if(is_null($fila)){
-			$quer="SELECT GENE.gene_name,GENE.gene_posleft,GENE.gene_posright,GENE.gene_strand,GENE.gene_note FROM GENE JOIN OBJECT_SYNONYM on GENE.gene_id=OBJECT_SYNONYM.object_id WHERE OBJECT_SYNONYM.object_synonym_name='".$gene."' or GENE.gene_name='".$gene."'";
-			$res = $mysqli->query($quer);
-			$fila=$res->fetch_assoc();
-		}
-		if(is_null($fila)){
-			echo "Error, no se ha encontrado el elemento a buscar";		
-		}else{
-			echo '<table border="1" cellpadding="10" cellspacing="0">';
-			echo '<tr>'; 
-			echo '<th colspan="2">Gene</th>';
-			echo '</tr>';
-			$campos=array("gene_name","gene_posleft","gene_posright","gene_strand","gene_note");
-			foreach($campos as $element){
-				echo "<tr>";
-				if($element=="gene_name"){
-					echo "<td>Name</td>";
-				}
-				if($element=="gene_posleft"){
-					echo "<td>Left Position</td>";
-				}
-				if($element=="gene_posright"){
-					echo "<td>Right Position</td>";
-				}
-				if($element=="gene_strand"){
-					echo "<td>Strand</td>";
-				}
-				if($element=="gene_note"){
-					echo "<td>Note</td>";
-				}
-				echo "<td>".$fila[$element]."</td>";
-				echo "<tr>";
-			}
-			echo "</table>";
-		}
-		?>
-		<?php	
-    		$res->close();
-		$mysqli->close();
-		?>
 	</body>
 </html>
