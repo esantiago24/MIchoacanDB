@@ -57,14 +57,14 @@ body{
 .Checkboxes{
 	position:absolute;
 	margin-top:60px;
-        transform:translate(-340px,10px);
+        transform:translate(-240px,10px);
         font-family:Arial;
         color:#FFF;
         text-align:center;
 	align-items:center;
         background:rgba(0,0,0,0.7);
         padding:20px;
-        width:350px;
+        width:250px;
         height:10px;
         border-radius:100px;
 	display:inline-block;

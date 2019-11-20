@@ -45,8 +45,8 @@
 						<li><a href="./InterfazWeb.html" class="has-sub">Home</a></li>
 						<li><a href="./Login.html" class="has-sub">Download</a>
                                                         <ul>
-                                                        <li><a href="Display_dataset.php">Dataset</a></li>
-                                                        <li><a href="L">Dump</a></li>
+                                                        <li><a href="./Display_dataset.php">Dataset</a></li>
+                                                        <li><a href="./Login.html">Dump</a></li>
                                                         </ul>
 						</li>
 						<li><a href="./Developers.html">About us</a></li>
@@ -60,8 +60,8 @@
 						<input class="search-txt" type="text" name="search" placeholder="Type to search">
 						<div class="Checkboxes"> <!--Search Parameters-->
 							<input type="checkbox" name="gene" id="gene" checked="checked"> Gene
-							<input type="checkbox" name="promoter" id="promoter" checked="checked"> Promoter
-							<input type="checkbox" name="tu" id="tu" checked="checked"> Transcriptional Unit
+							<input type="checkbox" name="promoter" id="promoter" checked="checked"> Product
+							<input type="checkbox" name="tu" id="tu" checked="checked"> Operon
 						</div>
 						<button type="submit" name="submit" class="search-btn">
 						<i class="fas fa-search"></i>
@@ -92,7 +92,7 @@
 			$fila=$res->fetch_assoc();
 		}
 		if(is_null($fila)){
-			echo "Error, no se ha encontrado el elemento a buscar";		
+			echo "Error, no se ha encontrado el elemento a buscar";
 		}else{
 			echo '<table border="1" cellpadding="10" cellspacing="0">';
 			echo '<tr>'; 
@@ -122,7 +122,7 @@
 			echo "</table>";
 		}
 		?>
-		<?php	
+		<?php
     		$res->close();
 		$mysqli->close();
 		?>
