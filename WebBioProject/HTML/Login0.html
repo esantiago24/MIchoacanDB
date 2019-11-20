@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>MDB Login</title>
+		<link rel="icon" href="../Ima/LF.ico"> <!--Webpage Icon -->
+		<link href="../CSS/Login.css" rel="stylesheet" type="text/css" />
+		<link href="../CSS/Register2.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+
+				function validate_mail(input){
+					var correo=input.value.trim();
+					if(correo == null || correo.length == 0 || !correo.match(/(^\w+@\w+((\.\w+){1,2})$)/im)){
+						input.style.borderBottomColor="red";
+						return 0;
+					} else{return 1; }
+				}
+
+				function myFunction(){
+					var x = document.getElementById("msg");
+					x.className  = "show";
+					setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+				}
+
+				function clean(limpiar){
+					limpiar.style.borderBottomColor = "white";
+				}
+
+				function validate_form(){
+				 	var flag=1;
+					if(!validate_mail(document.getElementById("Mail"))){
+						flag=0;
+					}
+					if(!flag){
+						myFunction();
+						return false;
+					}
+			 	}
+
+
+</script>
+	</head>
+
+	<body>
+                <div id="Container">
+                                <div id="Header">
+					<a href="./InterfazWeb.html">
+                                        	<img src="../Ima/LogHeader.png" alt="" />
+					</a>
+
+		 <div class="signin"> <!--Signin Form-->
+			<form id="SIGNIN" name="signin" method="get" onsubmit= "return validate_form()" action="Validate_user.php" >
+				<h2 style="color: white">Log In</h2>
+				<input type="text" id="Mail" name="email" placeholder="E-mail address" autocomplete="off" onblur="return validate_mail(this);" onclick="clean(this)"><br><br><br>
+				<input type="submit" value="Log In"></a><br><br>
+				<div id="msg">Please make sure to type your email correctly. No special characters are allowed!</div><br><br><br>
+				Don't have an account?<a href="./Register.html">&nbsp;&nbsp;Sign Up</a>
+			</form>
+		</div>
+
+	</body>
+
+
+
+
+</html>
