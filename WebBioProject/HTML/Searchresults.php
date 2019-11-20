@@ -95,7 +95,7 @@
 			$resultados+=($res_gene_syn->num_rows);
 		}
 		if($promoter){
-			$quer="select product_id,product_name from PRODUCT where product_name like'%".$name."%'";
+			$quer="select PRODUCT.product_id,PRODUCT.product_name,GENE_PRODUCT_LINK.gene_id from PRODUCT LEFT JOIN GENE_PRODUCT_LINK on PRODUCT.product_id=GENE_PRODUCT_LINK.product_id where product_name like'%".$name."%'";
 			$res_prod= $mysqli->query($quer);
 			$resultados+=($res_prod->num_rows);	
 		}
@@ -117,13 +117,7 @@
 		if($promoter){
 			for($num_fila=1;$num_fila<=$res_prod->num_rows;$num_fila++){
 				$fila_prod=$res_prod->fetch_assoc();
-				$quer="select gene_id from GENE_PRODUCT_LINK where product_id ='".$fila_prod['product_id']."'";
-				$res_prod_id=$mysqli->query($quer);
-				$fila_prod_id=$res_prod_id->fetch_assoc();
-				echo "<tr><td>Product</td><td><a href='./Results.php?object_id=".$fila_prod_id['gene_id']."'>".$fila_prod["product_name"]."</a></td></tr>";
-			}
-			if($num_fila>1){
-				$res_prod_id->close();
+				echo "<tr><td>Product</td><td><a href='./Results.php?object_id=".$fila_prod['gene_id']."'>".$fila_prod["product_name"]."</a></td></tr>";
 			}
 			$res_prod->close();
 		}
