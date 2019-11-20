@@ -18,7 +18,36 @@
 		</style>
 
 		<title>MDB Display Dataset</title>
+		<script language="JavaScript">
 
+
+			function validate_gene(nombre){
+				var cadena=nombre.value.trim();
+				if(cadena == null || cadena.length <=1){
+					return 0;
+				} else{return 1;}
+			 }
+
+			function myFunction(){
+				var x = document.getElementById("msg");
+				x.className  = "show";
+				setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+			}
+
+			function validate_form(){
+				var flag=1;
+				if(!validate_gene(document.getElementById("Gene"))){
+					flag=0;
+				}
+
+				if(!flag){
+					myFunction();
+					return false;
+				}
+			}
+
+
+				</script>
 	</head>
 	<body>
 
@@ -49,22 +78,24 @@
 				<div id="SideBar"></div>
 
 				<div id="MainBody"> <!--MainBody contains the search bar-->
-					<form id="form1" name="form1" method="get" action="Searchresults.php">
+					<form id="form1" name="form1" method="get" onsubmit="validate_form()" action="Searchresults.php">
 					<div class="search-box">
-						<input class="search-txt" type="text" name="search" placeholder="Type to search">
+						<input class="search-txt" type="text" id="Gene" name="search" placeholder="Type to search">
 						<div class="Checkboxes"> <!--Search Parameters-->
 							<input type="checkbox" name="gene" id="gene" checked="checked"> Gene
 							<input type="checkbox" name="promoter" id="promoter" checked="checked"> Product
-							
+
 						</div>
-						<button type="submit" name="submit" class="search-btn">
+						<button type="submit" name="submit"  class="search-btn">
 						<i class="fas fa-search"></i>
 						</button>
 					</div>
+				</form>
 
 				<iframe src="Dataset.txt" style="height:300px;width:400px;"></iframe> <br><br><br>
 
 				<div class="Download-dataset">
+<div id="msg">Please make sure to check your input!</div>
 
 					<a href="./Dataset.txt" download= "ecolidb_dataset.tsv">
 						<button type="submit" name="download" class="download-txt">.txt Format
@@ -83,7 +114,7 @@
 					<h1>Download dataset</h1>
 				</div>
 
-					</form><!--End Form-->
+
 				</div> <!--End MainBody-->
 			</div> <!--End Content Wrap-->
 		</div> <!--End Container-->

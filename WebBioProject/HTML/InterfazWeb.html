@@ -20,6 +20,38 @@
 		}
 		</style>
 
+		<script language="JavaScript">
+
+
+			function validate_gene(nombre){
+				var cadena=nombre.value.trim();
+				if(cadena == null || cadena.length <=1){
+					return 0;
+				} else{return 1;}
+			 }
+
+			function myFunction(){
+				var x = document.getElementById("msg");
+				x.className  = "show";
+				setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+			}
+
+			function validate_form(){
+				var flag=1;
+				if(!validate_gene(document.getElementById("gene"))){
+					flag=0;
+				}
+
+				if(!flag){
+					myFunction();
+					return false;
+				}
+			}
+
+
+				</script>
+
+
 	</head>
 
 	<body>
@@ -47,13 +79,13 @@
 				</div> <!--End Menu-->
 
 				<div id="SideBar"></div>
-				
+
 				<div id="MainBody"> <!--MainBody contains the search bar-->
-				
-					<form id="form1" name="form1" method="get" action="Searchresults.php">
+
+					<form id="form1" name="form1" method="get" onsubmit="return validate_form()" action="Searchresults.php" >
 
 					<div class="search-box">
-						<input class="search-txt" type="text" name="search" placeholder="Type to search">
+						<input class="search-txt" type="text" id="gene" name="search" placeholder="Type to search">
 						<div class="Checkboxes"> <!--Search Parameters-->
 							<h3> Select fields to search: </h3>
 							<input type="checkbox" name="gene" id="gene" checked="checked"> Gene </br>
@@ -63,15 +95,15 @@
 						<i class="fas fa-search"></i>
 						</button>
 					</div>
-				
+
 					<div class="Text_Search">
 						<h1>Gene Search</h1>
 					</div>
-					
+<div id="msg">Please make sure to check your input. No empty fields are allowed!</div>
 					</form><!--End Form-->
 
 				</div> <!--End MainBody-->
-			
+
 			</div> <!--End Content Wrap-->
 		</div> <!--End Container-->
 	</body>

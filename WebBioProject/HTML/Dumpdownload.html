@@ -5,6 +5,7 @@
 		<link href="../CSS/Mainbodyres.css" rel="stylesheet" type="text/css" /> <!--Link to css file-->
 		<link href="../CSS/MenuRes.css" rel="stylesheet" type="text/css" />
 		<link href="../CSS/Searchresultsbar.css" rel="stylesheet" type="text/css" />
+		<link href="../CSS/Display_dataset.css" rel="stylesheet" type="text/css" />
 		<script src="https://kit.fontawesome.com/43eb676244.js" crossorigin="anonymous"></script>
 		<!--The following lines put all the Webpage margins in 0-->
 		<style type="text/css">
@@ -36,7 +37,7 @@
 						<li><a href="./Login.html" class="has-sub">Download</a>
                                                         <ul>
                                                         <li><a href="Display_dataset.php">Dataset</a></li>
-                                                        <li><a href="L">Dump</a></li>
+                                                        <li><a href="./Dumpdownload.html">Dump</a></li>
                                                         </ul>
 						</li>
 						<li><a href="./Developers.html">About us</a></li>
@@ -51,12 +52,20 @@
 						<div class="Checkboxes"> <!--Search Parameters-->
 							<input type="checkbox" name="gene" id="gene" checked="checked"> Gene
 							<input type="checkbox" name="promoter" id="promoter" checked="checked"> Product
-							
+
 						</div>
 						<button type="submit" name="submit" class="search-btn">
 						<i class="fas fa-search"></i>
 						</button>
 					</div>
+					<br>
+					<div class="Download-dataset">
+					<br><br><br>
+						<a href="../Downloads/script_mysql.sql" download= "dump_ecolidb.sql">
+						<button type="submit" name="download" class="download-dump">Download dump
+						</a>
+					</div>
+
 					</form><!--End Form-->
 				</div> <!--End MainBody-->
 			</div> <!--End Content Wrap-->
