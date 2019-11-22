@@ -3,8 +3,6 @@
 body {
 	font-family:Arial;
 	color: #ffe6e6;
-	background:url(../Ima/Coli.jpg);
-	background-size:100%;
 }
 
 #Container {
@@ -30,15 +28,17 @@ img {
 	padding:40px;
 	width:240px;
 	height:320px;
-	transform:translate(145%,-22.5%);
+	transform:translate(400px,30px);
 }
 
-form { /*Lines up the text in the rectangle*/
-	width: 275px;
+.signin form { /*Lines up the text in the rectangle*/
+	width: 240px;
+	margin-top:-30px;
 	text-align:center;
+	
 }
 
-input{
+.signin input{
 	width:240px;
 	text-align:center;
 	background:transparent;
@@ -53,7 +53,7 @@ input{
 	margin-left:auto;
 }
 
-input[type=button] {
+.signin input[type=submit] {
 	border:none;
 	width:190px;
 	background:white;
@@ -66,7 +66,7 @@ input[type=button] {
 	font-family:Arial;
 }
 
-input[type=button]:hover {
+.signin input[type=submit]:hover {
 	color:#FFF;
 	background-color:#000;
 

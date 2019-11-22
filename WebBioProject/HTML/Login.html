@@ -1,10 +1,13 @@
 <html>
 	<head>
 		<title>MDB Login</title>
-		<link rel="icon" href="../Ima/LF.ico"> <!--Webpage Icon -->
-		<link href="../CSS/Login.css" rel="stylesheet" type="text/css" />
-		<link href="../CSS/Register2.css" rel="stylesheet" type="text/css">
-<script language="JavaScript">
+			<link rel="icon" href="../Ima/LF.ico"> <!--Webpage Icon -->
+			<link href="../CSS/Login.css" rel="stylesheet" type="text/css">
+			<link href="../CSS/Mainbodyres.css" rel="stylesheet" type="text/css" /> <!--Link to css file-->
+			<link href="../CSS/MenuRes.css" rel="stylesheet" type="text/css" />
+			<link href="../CSS/Searchresultsbar.css" rel="stylesheet" type="text/css" />
+			<script src="https://kit.fontawesome.com/43eb676244.js" crossorigin="anonymous"></script>
+			<script language="JavaScript">
 
 				function validate_mail(input){
 					var correo=input.value.trim();
@@ -36,29 +39,62 @@
 			 	}
 
 
-</script>
+			</script>
 	</head>
 
-	<body>
+        <body>
                 <div id="Container">
-                                <div id="Header">
-					<a href="./InterfazWeb.html">
-                                        	<img src="../Ima/LogHeader.png" alt="" />
-					</a>
+                    <div id="Header">
+                        <a href="./InterfazWeb.html">
+                            <img src="../Ima/LogHeader.png">
+                        </a>
+                        <div class="Text">
+							<h1>E. Coli Gene Database</h1>
+						</div>
+					</div>
 
-		 <div class="signin"> <!--Signin Form-->
-			<form id="SIGNIN" name="signin" method="get" onsubmit= "return validate_form()" action="Validate_user.php" >
-				<h2 style="color: white">Log In</h2>
-				<input type="text" id="Mail" name="email" placeholder="E-mail address" autocomplete="off" onblur="return validate_mail(this);" onclick="clean(this)"><br><br><br>
-				<input type="submit" value="Log In"></a><br><br>
-				<div id="msg">Please make sure to type your email correctly. No special characters are allowed!</div><br><br><br>
-				Don't have an account?<a href="./Register.html">&nbsp;&nbsp;Sign Up</a>
-			</form>
-		</div>
+					<!--The following lines contain the Menu set up-->
+					<div id="Menu">
+						<ul class="EMenu">
+							<li><a href="./InterfazWeb.html" class="has-sub">Home</a></li>
+							<li><a href="Login.html" class="has-sub">Download</a>
+                                <ul>
+									<li><a href="./Display_dataset.php">Dataset</a></li>
+                                    <li><a href="./Login.html">Dump</a></li>
+                                </ul>
+							</li>
+							<li><a href="./Developers.html">About us</a></li>
+						</ul>
+					</div> <!--End Menu-->    
 
-	</body>
+                </div>
 
+		 	<div class="signin"> <!--Signin Form-->
+				<form id="SIGNIN" name="signin" method="get" onsubmit= "return validate_form()" action="Validate_user.php" >
+					<h2 style="color: white">Log In</h2>
+					<input type="text" id="Mail" name="email" placeholder="E-mail address" autocomplete="off" onblur="return validate_mail(this);" onclick="clean(this)"><br><br><br>
+					<input type="submit" value="Log In"></a><br><br>
+					<div id="msg">Please make sure to type your email correctly. No special characters are allowed!</div><br><br><br>
+					Don't have an account?<a href="./Register.html">&nbsp;&nbsp;Sign Up</a>
+				</form>
+			</div>
 
+				<div id="MainBody"> <!--MainBody contains the search bar-->
+					<form id="form1" name="form1" method="get" action="Searchresults.php">
+					<div class="search-box">
+						<input class="search-txt" type="text" name="search" placeholder="Type to search">
+						<div class="Checkboxes"> <!--Search Parameters-->
+							<input type="checkbox" name="gene" id="gene" checked="checked"> Gene
+							<input type="checkbox" name="promoter" id="promoter" checked="checked"> Product
+							
+						</div>
+						<button type="submit" name="submit" class="search-btn">
+						<i class="fas fa-search"></i>
+						</button>
+					</div>
+					</form><!--End Form-->
+					
 
+        </body>
 
 </html>

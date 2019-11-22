@@ -5,9 +5,9 @@
   <body>
 <?php
 error_reporting(E_ALL);
-$mysqli = new mysqli("localhost:3306", "root", "genoma123","ecolidb");
+$mysqli = new mysqli("localhost:3306", "insertdb", "ReguL1igh22#","ecolidb");
       if ($mysqli->connect_errno) {
-          header("Location: ./Reg_failure.html");
+          header("Location: ./ErrorReg.html");
      }
 
      $name = strtolower($_GET['Name']);

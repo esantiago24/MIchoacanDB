@@ -36,8 +36,8 @@ body{
         background:#404040;
         display:flex;
         justify-content:center;
+	transition:1.2s;
         align-items:center;
-        transition:1.2s;
         border:none;
 }
 
@@ -49,9 +49,9 @@ body{
         padding:0;
         color:white;
         font-size:20px;
-        transition:3s;
         line-height:50px;
         width:0px;
+	transition:3s;
 }
 
 .Checkboxes{

@@ -3,7 +3,10 @@
 		<title>MDB Registration</title>
 			<link rel="icon" href="../Ima/LF.ico"> <!--Webpage Icon -->
 			<link href="../CSS/Register2.css" rel="stylesheet" type="text/css">
-
+			<link href="../CSS/Mainbodyres.css" rel="stylesheet" type="text/css" /> <!--Link to css file-->
+			<link href="../CSS/MenuRes.css" rel="stylesheet" type="text/css" />
+			<link href="../CSS/Searchresultsbar.css" rel="stylesheet" type="text/css" />
+			<script src="https://kit.fontawesome.com/43eb676244.js" crossorigin="anonymous"></script>
 			<script language="JavaScript">
 
 				function validate_name(nombre){
@@ -56,11 +59,28 @@
 
         <body>
                 <div id="Container">
-                                <div id="Header">
-                                        <a href="./InterfazWeb.html">
-                                                <img src="../Ima/LogHeader.png">
-                                        </a>
-                                </div>
+                    <div id="Header">
+                        <a href="./InterfazWeb.html">
+                            <img src="../Ima/LogHeader.png">
+                        </a>
+                        <div class="Text">
+							<h1>E. Coli Gene Database</h1>
+						</div>
+					</div>
+
+					<!--The following lines contain the Menu set up-->
+					<div id="Menu">
+						<ul class="EMenu">
+							<li><a href="./InterfazWeb.html" class="has-sub">Home</a></li>
+							<li><a href="Login.html" class="has-sub">Download</a>
+                                <ul>
+									<li><a href="./Display_dataset.php">Dataset</a></li>
+                                    <li><a href="./Login.html">Dump</a></li>
+                                </ul>
+							</li>
+							<li><a href="./Developers.html">About us</a></li>
+						</ul>
+					</div> <!--End Menu-->    
 
                 </div>
 
@@ -70,19 +90,35 @@
                                 <input type="text" id=First_Name name="Name" placeholder="First Name" autocomplete="off" onblur="return validate_name(this);" onclick="clean(this)" ><br><br>
 				<input type="text" id=Last_Name name="Last_name" placeholder="Last Name" autocomplete="off" onblur="return validate_name(this);" onclick="clean(this)" ><br><br>
                                 <input type="text" id=Institution name="Ins" placeholder="Institution" autocomplete="off" onblur="return validate_name(this);" onclick="clean(this)" ><br><br>
-				<font size="6">Use</font></br>
+				<font size="6" color="#FFF">Use</font></br>
 				<div id="Check">
-					<h4>									<input type="radio" name="use" value="Academic" id="Academic" checked="checked">Academic &nbsp;&nbsp;
+					<h4>	<input type="radio" name="use" value="Academic" id="Academic" checked="checked">Academic &nbsp;&nbsp;
                 <input type="radio" name="use" value="Private" id="Private">Private
 					</h4>
 				</div>
 				<input type="text" id=Mail name="email" placeholder="E-Mail address" autocomplete="off" onblur="return validate_mail(this);" onclick="clean(this)"><br><br>
 				<input type="submit" value="Register" > <br><br>
                         	<div id="msg">Please make sure to check your input. No special characters or empty fields are allowed!</div>
-				<br>Already registered?<a href="./Login.html">&nbsp;&nbsp;Log in</a>
+				<br><font size="3" font-family="arial" color="#FFF">Already registered?</font><a href="./Login.html">&nbsp;&nbsp;Log in</a>
 
-			</form>
+						</form>
                 </div>
+
+				<div id="MainBody"> <!--MainBody contains the search bar-->
+					<form id="form1" name="form1" method="get" action="Searchresults.php">
+					<div class="search-box">
+						<input class="search-txt" type="text" name="search" placeholder="Type to search">
+						<div class="Checkboxes"> <!--Search Parameters-->
+							<input type="checkbox" name="gene" id="gene" checked="checked"> Gene
+							<input type="checkbox" name="promoter" id="promoter" checked="checked"> Product
+							
+						</div>
+						<button type="submit" name="submit" class="search-btn">
+						<i class="fas fa-search"></i>
+						</button>
+					</div>
+					</form><!--End Form-->
+					
 
         </body>
 

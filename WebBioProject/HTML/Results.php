@@ -154,16 +154,16 @@
 		
 	?>
 	<?php
-		$quer="select product_id,product_name,molecular_weigth,isoelectric_point,location,product_note,product_type from PRODUCT where product_id=(select product_id from GENE_PRODUCT_LINK where gene_id='".$object_id."')";
+		$quer="select product_id,product_name,molecular_weigth,isoelectric_point,location,product_note,product_type from PRODUCT where product_id in (select product_id from GENE_PRODUCT_LINK where gene_id='".$object_id."')";
 //sinónimos
 		$res_prod=$mysqli->query($quer);
-		$fila_prod=$res_prod->fetch_assoc();
-
-		$quer="select object_synonym_name from OBJECT_SYNONYM where object_id='".$fila_prod['product_id']."'";
-		$res_syn= $mysqli->query($quer);
 
 		$campos=array("product_name","product_sequence", "molecular_weigth", "isoelectric_point", "location", "product_synonym", "product_type", "product_note");
 		if(($res_prod->num_rows)>=1){
+		for($num_res=1;$num_res<=$res_prod->num_rows;$num_res++){
+			$fila_prod=$res_prod->fetch_assoc();
+			$quer="select object_synonym_name from OBJECT_SYNONYM where object_id='".$fila_prod['product_id']."'";
+			$res_syn= $mysqli->query($quer);
 			echo "<br><br><table border='1' cellpadding='10' cellspacing='0'><tr><th colspan='2'>Product</th></tr>";
 			foreach($campos as $element){
 				echo "<tr>";
@@ -210,25 +210,34 @@
 				}
 				echo "</tr>";
 			}
-			echo "</table>";
-			$res_prod->close();	
+			echo "</table>";	
+		}
+		$res_prod->close();
+		$res_syn->close();
 		}
 	?>
 	<?php
 	//Para crear la tabla de Operon
-		$quer="select operon_name from OPERON where operon_id=(select operon_id from TRANSCRIPTION_UNIT where transcription_unit_id=(select transcription_unit_id from TU_GENE_LINK where gene_id='".$object_id."'))";
-		$res_prom_op=$mysqli->query($quer);
-		$fila_prom_op=$res_prom_op->fetch_assoc();
-		$operon_name=$fila_prom_op["operon_name"];
-		$quer="select promoter_sequence from PROMOTER where promoter_id=(select promoter_id from TRANSCRIPTION_UNIT where transcription_unit_id=(select transcription_unit_id from TU_GENE_LINK where gene_id='".$object_id."'))";
-		$res_prom_op=$mysqli->query($quer);
-		$fila_prom_op=$res_prom_op->fetch_assoc();
-		$prom_sequence=$fila_prom_op["promoter_sequence"];
-		if($operon_name!="" or $prom_sequence!=""){
-			echo "<br><br><table border='1' cellpadding='10' cellspacing='0'><tr><th colspan='2'>Operon</th></tr>";
-			echo "<tr><td>Name</td><td>".$operon_name."</td></tr><tr><td>Promoter sequence</td><td>".$prom_sequence."</td></tr>";
+		$quer="select transcription_unit_id from TU_GENE_LINK where gene_id='".$object_id."'";
+		$res_tu=$mysqli->query($quer);
+		for($num_res=1;$num_res<=$res_tu->num_rows;$num_res++){
+			$fila_tu=$res_tu->fetch_assoc();
+			$quer="select operon_name from OPERON where operon_id in (select operon_id from TRANSCRIPTION_UNIT where transcription_unit_id = '".$fila_tu["transcription_unit_id"]."')";
+			$res_prom_op=$mysqli->query($quer);
+			$fila_op=$res_prom_op->fetch_assoc();
+			$quer="select promoter_sequence from PROMOTER where promoter_id in(select promoter_id from TRANSCRIPTION_UNIT where transcription_unit_id='".$fila_tu["transcription_unit_id"]."')";
+			$res_prom_op=$mysqli->query($quer);
+			$fila_prom=$res_prom_op->fetch_assoc();
+			if($fila_op["operon_name"]!="" or $fila_prom["promoter_sequence"]!=""){
+				echo "<br><br><table border='1' cellpadding='10' cellspacing='0'><tr><th colspan='2'>Operon</th></tr>";
+				echo "<tr><td>Name</td><td>".$fila_op["operon_name"]."</td></tr><tr><td>Promoter sequence</td><td>".$fila_prom["promoter_sequence"]."</td></tr>";
+			}
+		echo "</table>";
 		}
-		$res_prom_op->close();
+		if($res_tu->num_rows>=1){
+			$res_prom_op->close();			
+		}
+		$res_tu->close();
 	?>
 	<?php
 	//Para crear la tabla de referencias
@@ -247,11 +256,10 @@
 				$fila_pub=$res_pub->fetch_assoc();
 				echo "<tr><td>[".$num_fila."] ".$fila_pub["author"].", ".$fila_pub["years"].", ".$fila_pub["title"].", ".$fila_pub["source"]."</td></tr>";
 			}
-			echo "</table>";
+			echo "</table><br><br>";
 			$res_pub->close();
 		}
 		$res_ext_id->close();
-		$res_syn->close();
 		$res->close();
 	}
 	$mysqli->close();
@@ -261,3 +269,4 @@
 		</div> <!--End Container-->
 	</body>
 </html>
+
